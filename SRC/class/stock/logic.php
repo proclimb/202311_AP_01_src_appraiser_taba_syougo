@@ -16,11 +16,11 @@ function subStock()
         $param["sDel"] = 1;
     }
 
-    if (! $param["sPage"]) {
+    if (!$param["sPage"]) {
         $param["sPage"] = 1;
     }
 
-    if (! $param["orderBy"]) {
+    if (!$param["orderBy"]) {
         $param["orderBy"] = 'STOCKNO';
         $param["orderTo"] = 'DESC';
     }
@@ -125,7 +125,7 @@ function subStockEditComplete()
         $res = mysqli_query($conn, $sql);
     } else {
         $param["stockNo"] = fnNextNo('STOCK');
-        $sql = fnSqlStockInsert($param);
+        $sql = fnSqlStockEdit($param);
         $res = mysqli_query($conn, $sql);
     }
 
