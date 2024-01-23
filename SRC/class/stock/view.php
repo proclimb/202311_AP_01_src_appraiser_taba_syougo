@@ -244,12 +244,12 @@ function subStockEditView($param)
 			<tr>
 				<th>除外</th>
 				<td><input type="radio" name="del" value="1" checked='checked' /> 非除外
-					<input type="radio" name="del" value="0" /> 除外
+					<input type="radio" name="del" value="0" <?php if ($param["del"] === "0") print ' checked="1"'; ?> /> 除外
 				</td>
 			</tr>
 			<tr>
 				<th>担当</th>
-				<td><input type="text" name="charge" value="<?php print $param["charge"] ?>" /></td>
+				<td><input type="text" name="charge" value="<?php $param["charge"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>ランク</th>
@@ -257,7 +257,7 @@ function subStockEditView($param)
 					<?php
 					for ($i = 0; $i < 5; $i++) {
 					?>
-						<input type="radio" name="rank" value="<?php print $i + 1; ?>" <?php if ($param["rank"] == $i) print ' checked="checked"'; ?> /> <?php print fnRankName($i); ?>
+						<input type="radio" name="rank" value="<?php print $i + 1; ?>" <?php if ($param["rank"] == $i + 1) print ' checked="checked"'; ?> /> <?php print fnRankName($i); ?>
 					<?php
 					}
 					?>
@@ -265,23 +265,23 @@ function subStockEditView($param)
 			</tr>
 			<tr>
 				<th>物件名<span class="red">（必須）</span></th>
-				<td><input type="text" name="article" id="name" value="<?php print $param["article"] ?>" /></td>
+				<td><input type="text" name="article" id="name" value="<?php $param["article"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>物件名（よみ）</th>
-				<td><input type="text" name="articleFuri" id="ruby" value="<?php print $param["articleFuri"] ?>" /></td>
+				<td><input type="text" name="articleFuri" id="ruby" value="<?php $param["articleFuri"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>部屋</th>
-				<td><input type="text" name="room" value="<?php print $param["room"] ?>" /></td>
+				<td><input type="text" name="room" value="<?php $param["room"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>面積</th>
-				<td><input type="text" name="area" value="<?php print $param["area"] ?>" />㎡</td>
+				<td><input type="text" name="area" value="<?php $param["area"] ?>" />㎡</td>
 			</tr>
 			<tr>
 				<th>最寄駅</th>
-				<td><input type="text" name="station" value="<?php print $param["station"] ?>" /></td>
+				<td><input type="text" name="station" value="<?php $param["station"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>距離</th>
@@ -289,7 +289,9 @@ function subStockEditView($param)
 					<?php
 					for ($i = 0; $i < 4; $i++) {
 					?>
-						<input type="radio" name="distance" value="<?php print $i + 1; ?>" <?php if ($param["distance"] == $i) print ' checked="checked"'; ?> /> <?php print fnDistanceName($i); ?>
+						<input type="radio" name="distance" value="<?php print $i + 1; ?>" <?php if (1 == $i + 1) {
+																								print ' checked="checked"';
+																							} elseif ($param["distance"] == $i + 1) print ' checked="checked"'; ?> /> <?php print fnDistanceName($i); ?>
 					<?php
 					}
 					?>
@@ -297,31 +299,31 @@ function subStockEditView($param)
 			</tr>
 			<tr>
 				<th>業者名</th>
-				<td><input type="text" name="agent" value="<?php print $param["agent"] ?>" /></td>
+				<td><input type="text" name="agent" value="<?php $param["agent"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>店舗名</th>
-				<td><input type="text" name="store" value="<?php print $param["store"] ?>" /></td>
+				<td><input type="text" name="store" value="<?php $param["store"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>担当者名</th>
-				<td><input type="text" name="cover" value="<?php print $param["cover"] ?>" /></td>
+				<td><input type="text" name="cover" value="<?php $param["cover"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>内見</th>
-				<td><input type="text" name="visitDT" value="<?php print $param["visitDT"] ?>" /> <a href="javascript:cal1.write();" onChange="cal1.getFormValue(); cal1.hide();"><img src="./images/b_calendar.png"></a><span id="cal1"></span></td>
+				<td><input type="text" name="visitDT" value="<?php $param["visitDT"] ?>" /> <a href="javascript:cal1.write();" onChange="cal1.getFormValue(); cal1.hide();"><img src="./images/b_calendar.png"></a><span id="cal1"></span></td>
 			</tr>
 			<tr>
 				<th>机上金額</th>
-				<td><input type="text" name="deskPrice" value="<?php print $param["deskPrice"] ?>" />万円</td>
+				<td><input type="text" name="deskPrice" value="<?php $param["deskPrice"] ?>" />万円</td>
 			</tr>
 			<tr>
 				<th>売主希望金額</th>
-				<td><input type="text" name="vendorPrice" value="<?php print $param["vendorPrice"] ?>" />万円</td>
+				<td><input type="text" name="vendorPrice" value="<?php $param["vendorPrice"] ?>" />万円</td>
 			</tr>
 			<tr>
 				<th>備考</th>
-				<td><textarea name="note" cols="50" rows="10"><?php print $param["note"] ?></textarea></td>
+				<td><textarea name="note" cols="50" rows="10"><?php $param["note"] ?></textarea></td>
 			</tr>
 			<tr>
 				<th>仕入経緯</th>
