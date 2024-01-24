@@ -125,7 +125,7 @@ function subStockEditComplete()
         $res = mysqli_query($conn, $sql);
     } else {
         $param["stockNo"] = fnNextNo('STOCK');
-        $sql = fnSqlStockEdit($param);
+        $sql = fnSqlStockInsert($param);
         $res = mysqli_query($conn, $sql);
     }
 
