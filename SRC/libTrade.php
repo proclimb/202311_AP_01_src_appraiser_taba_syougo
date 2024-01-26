@@ -189,7 +189,7 @@ function subTradeEdit()
 	$sPage   = $_REQUEST['sPage'];
 
 	$tradeNo = $_REQUEST['tradeNo'];
-
+	var_dump($tradeNo);
 	if ($tradeNo) {
 		$sql = fnSqlTradeEdit($tradeNo);
 		$res = mysqli_query($conn, $sql);
@@ -249,51 +249,51 @@ function subTradeEdit()
 			</tr>
 			<tr>
 				<th>業者名<span class="red">（必須）</span></th>
-				<td><input type="text" name="name" value="<?php print $name; ?>" /></td>
+				<td><input type="text" name="name" value="<?php $name; ?>" /></td>
 			</tr>
 			<tr>
 				<th>業者名（よみ）</th>
-				<td><input type="text" name="nameFuri" value="<?php print $nameFuri; ?>" /></td>
+				<td><input type="text" name="nameFuri" value="<?php $nameFuri; ?>" /></td>
 			</tr>
 			<tr>
 				<th>支店名</th>
-				<td><input type="text" name="branch" value="<?php print $branch; ?>" /></td>
+				<td><input type="text" name="branch" value="<?php $branch; ?>" /></td>
 			</tr>
 			<tr>
 				<th>支店名（よみ）</th>
-				<td><input type="text" name="branchFuri" value="<?php print $branchFuri; ?>" /></td>
+				<td><input type="text" name="branchFuri" value="<?php $branchFuri; ?>" /></td>
 			</tr>
 			<tr>
 				<th>郵便番号</th>
-				<td><input type="text" name="zip" value="<?php print $zip; ?>" /></td>
+				<td><input type="text" name="zip" value="<?php $zip; ?>" /></td>
 			</tr>
 			<tr>
 				<th>住所（都道府県）</th>
-				<td><input type="text" name="prefecture" value="<?php print $prefecture; ?>" /></td>
+				<td><input type="text" name="prefecture" value="<?php $prefecture; ?>" /></td>
 			</tr>
 			<tr>
 				<th>住所1（市区町村名）</th>
-				<td><input type="text" name="address1" value="<?php print $address1; ?>" /></td>
+				<td><input type="text" name="address1" value="<?php $address1; ?>" /></td>
 			</tr>
 			<tr>
 				<th>住所2（番地・ビル名）</th>
-				<td><input type="text" name="address2" value="<?php print $address2; ?>" /></td>
+				<td><input type="text" name="address2" value="<?php $address2; ?>" /></td>
 			</tr>
 			<tr>
 				<th>TEL</th>
-				<td><input type="text" name="tel" value="<?php print $tel; ?>" /></td>
+				<td><input type="text" name="tel" value="<?php $tel; ?>" /></td>
 			</tr>
 			<tr>
 				<th>FAX</th>
-				<td><input type="text" name="fax" value="<?php print $fax; ?>" /></td>
+				<td><input type="text" name="fax" value="<?php $fax; ?>" /></td>
 			</tr>
 			<tr>
 				<th>携帯電話</th>
-				<td><input type="text" name="mobile" value="<?php print $mobile; ?>" /></td>
+				<td><input type="text" name="mobile" value="<?php $mobile; ?>" /></td>
 			</tr>
 			<tr>
 				<th>内装関係</th>
-				<td><input type="checkbox" name="interior" value="1" <?php if ($interior == 1) print ' checked="checked"'; ?> /></td>
+				<td><input type="checkbox" name="interior" value="1" /></td>
 			</tr>
 
 		</table>
