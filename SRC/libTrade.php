@@ -357,7 +357,7 @@ function subTradeEditComplete()
 		$sql = fnSqlTradeUpdate($tradeNo, $name, $nameFuri, $branch, $branchFuri, $zip, $prefecture, $address1, $address2, $tel, $fax, $mobile, $interior, $del);
 		$res = mysqli_query($conn, $sql);
 	} else {
-		$sql = fnSqlTradeInsert(fnNextNo('TRADE'), $name, $nameFuri, $branch, $branchFuri, $zip, $prefecture, $address1, $address2, $tel, $fax, $mobile, $interior, $del);
+		$sql = fnSqlTradeInsert(fnNextNo('TRADE') + 1, $name, $nameFuri, $branch, $branchFuri, $zip, $prefecture, $address1, $address2, $tel, $fax, $mobile, $interior, $del);
 		$res = mysqli_query($conn, $sql);
 	}
 
