@@ -136,7 +136,7 @@ function subArticle()
 
 				</tr>
 			<?php
-				$i = ($i + 1) % 3;
+				$i = ($i + 1) % 2;
 			}
 			?>
 		</table>
