@@ -262,7 +262,8 @@ function subSellEditView($param)
 			</tr>
 		</table>
 
-		<a href="javascript:fnSellEditCheck();"><img src="./images/<?php print $param["btnImage"] ?>" /></a>　<a href="javascript:form.act.value='sellSearch';form.submit();"><img src="./images/btn_return.png" /></a>
+		<a href="javascript:fnSellEditCheck();"><img src="./images/<?php print $param["btnImage"] ?>" /></a>
+		<a href="javascript:form.act.value='sellSearch';form.submit();"><img src="./images/btn_return.png" /></a>
 
 	</form>
 
