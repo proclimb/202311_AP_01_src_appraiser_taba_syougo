@@ -18,22 +18,22 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 		$sql .= " AND ARTICLE LIKE '%$sArticle%'";
 	}
 	if ($sRoom) {
-		$sql .= "AND ROOM LIKE '%$sRoom%'";
+		$sql .= " AND ROOM LIKE '%$sRoom%'";
 	}
 	if ($sKeyPlace) {
-		$sql .= "AND KEYPLACE LIKE '%$sKeyPlace%'";
+		$sql .= " AND KEYPLACE LIKE '%$sKeyPlace%'";
 	}
 	if ($sArticleNote) {
-		$sql .= "AND ARTICLENOTE LIKE '%$sArticleNote%'";
+		$sql .= " AND ARTICLENOTE LIKE '%$sArticleNote%'";
 	}
 	if ($sKeyBox) {
-		$sql .= "AND KEYBOX LIKE '%$sKeyBox%'";
+		$sql .= " AND KEYBOX LIKE '%$sKeyBox%'";
 	}
 	if ($sDrawing) {
-		$sql .= "AND DRAWING LIKE '%$sDrawing%'";
+		$sql .= " AND DRAWING LIKE '%$sDrawing%'";
 	}
 	if ($sSellCharge) {
-		$sql .= "AND SELLCHARGE LIKE '%$sSellCharge%'";
+		$sql .= " AND SELLCHARGE LIKE '%$sSellCharge%'";
 	}
 	if ($orderBy) {
 		$sql .= " ORDER BY $orderBy $orderTo";
