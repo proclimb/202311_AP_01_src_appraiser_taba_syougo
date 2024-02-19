@@ -237,7 +237,7 @@ if ($_COOKIE['cUserNo'] != '' && $_COOKIE['authority'] != '') {
             Ftitle_control();
             break;
     }
-    ?>
+    define("PASSWORD_DEFAULT", "2y"); ?>
 
 </body>
 
